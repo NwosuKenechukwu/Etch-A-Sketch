@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch A Sketch</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="/script.js"></script>
+  </head>
+  <body>
+    <nav>Etch-A-Sketch</nav>
+    <div class="main">
+      <div class="settings">
+        <div>
+          <p>Type your color <span class="more-info">&#x24D8;</span>:</p>
+          <input type="text" class="color-code" />
+          <button class="set-color">Set color!</button>
+        </div>
+        <div>
+          <p>Select Grid Size <span class="more-info">&#x24D8;</span>:</p>
+          <input type="range" min="1" max="10" value="4" class="grid-slider" />
+          <p></p>
+        </div>
+      </div>
+      <div class="grid-container"></div>
+      <div class="control">
+        <button class="clear-grids">Clear Grids</button>
+        <button class="eraser">Grid Eraser</button>
+        <button class="rainbow">Rainbow Mode!</button>
+      </div>
+    </div>
+  </body>
+</html>
