@@ -127,21 +127,24 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* --------------------------------------------------------------------- 
+   -------------------------- STYLE ------------------------------------ 
+   --------------------------------------------------------------------- */
 
-/* Style */
 :root {
   --selected: "";
 }
 
 body {
   background-color: #2a9d8f;
-  font-family: "Silkscreen", cursive;
+  font-family: "monocraft", cursive;
+  min-height: 10vh;
 }
 
 nav {
   text-align: center;
   font-size: 7rem;
-  margin-bottom: 7rem;
+  margin: 3rem 0 7rem 0;
 }
 
 .main {
@@ -149,10 +152,55 @@ nav {
   justify-content: center;
 }
 
+p {
+  margin: 1rem 0;
+}
+
+.grid-slider {
+  width: 100%;
+  appearance: none;
+  outline: none;
+  height: 0.2rem;
+  background-color: black;
+}
+
+.grid-slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 2rem;
+  width: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+button {
+  border: none;
+  background-color: white;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 0.3rem;
+  margin-bottom: 2rem;
+  font-family: "monocraft", cursive;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.893);
+}
+
+.eraser:hover {
+  background-color: rgba(255, 255, 255, 0.893);
+}
+
+.color-code {
+  height: 2.6rem;
+  margin-bottom: 1rem;
+}
+
 .grid-container {
   background-color: white;
   display: flex;
   flex-direction: row;
+  margin: 0px 2rem;
+  user-select: none;
 }
 
 .grid {
@@ -170,4 +218,11 @@ nav {
 .control {
   display: flex;
   flex-direction: column;
+}
+
+footer {
+  background-color: black;
+  color: #2a9d8f;
+  text-align: center;
+  margin-top: auto;
 }

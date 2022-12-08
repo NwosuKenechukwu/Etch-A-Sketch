@@ -14,19 +14,25 @@
     />
     <script defer src="/script.js"></script>
   </head>
+  <style>
+    @font-face {
+      font-family: "monocraft";
+      src: url(/Monocraft.otf);
+    }
+  </style>
   <body>
     <nav>Etch-A-Sketch</nav>
     <div class="main">
       <div class="settings">
         <div>
-          <p>Type your color <span class="more-info">&#x24D8;</span>:</p>
+          <p>Type your color <span class="more-info">(?)</span>:</p>
           <input type="text" class="color-code" />
           <button class="set-color">Set color!</button>
         </div>
         <div>
-          <p>Select Grid Size <span class="more-info">&#x24D8;</span>:</p>
-          <input type="range" min="1" max="10" value="4" class="grid-slider" />
-          <p></p>
+          <p>Select Grid Size <span class="more-info">(?)</span>:</p>
+          <input type="range" min="1" max="30" value="16" class="grid-slider" />
+          <p>Size:<span class="size"></span></p>
         </div>
       </div>
       <div class="grid-container"></div>
@@ -36,5 +42,6 @@
         <button class="rainbow">Rainbow Mode!</button>
       </div>
     </div>
+    <footer>Copyright &copy; Kenechukwu Nwosu</footer>
   </body>
 </html>
