@@ -139,6 +139,8 @@ body {
   background-color: #2a9d8f;
   font-family: "monocraft", cursive;
   min-height: 10vh;
+  overflow: hidden;
+  color: #264653;
 }
 
 nav {
@@ -150,10 +152,25 @@ nav {
 .main {
   display: flex;
   justify-content: center;
+  margin-left: -13rem;
 }
 
 p {
-  margin: 1rem 0;
+  margin: 1rem 0 1rem 0;
+}
+
+.color-code {
+  height: 2.6rem;
+  margin-bottom: 8rem;
+  background-color: rgba(255, 255, 255, 0.893);
+}
+
+.color-code:focus {
+  background-color: white;
+}
+
+.more-info {
+  user-select: none;
 }
 
 .grid-slider {
@@ -161,7 +178,7 @@ p {
   appearance: none;
   outline: none;
   height: 0.2rem;
-  background-color: black;
+  background-color: #264653;
 }
 
 .grid-slider::-webkit-slider-thumb {
@@ -175,10 +192,12 @@ p {
 button {
   border: none;
   background-color: white;
+  color: #264653;
   width: 10rem;
   height: 3rem;
   border-radius: 0.3rem;
   margin-bottom: 2rem;
+  font-size: 1rem;
   font-family: "monocraft", cursive;
 }
 
@@ -190,21 +209,12 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.893);
 }
 
-.color-code {
-  height: 2.6rem;
-  margin-bottom: 1rem;
-}
-
 .grid-container {
   background-color: white;
   display: flex;
   flex-direction: row;
-  margin: 0px 2rem;
+  margin: 0 10rem 8.4rem 10rem;
   user-select: none;
-}
-
-.grid {
-  border: solid rgba(0, 0, 0, 0.15) thin;
 }
 
 .grid:hover {
@@ -221,8 +231,8 @@ button:hover {
 }
 
 footer {
-  background-color: black;
-  color: #2a9d8f;
+  color: #264653;
   text-align: center;
   margin-top: auto;
+  font-size: 3rem;
 }
