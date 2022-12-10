@@ -3,6 +3,7 @@
 const container = document.querySelector(".grid-container");
 const clearBtn = document.querySelector(".clear-grids");
 const eraseBtn = document.querySelector(".eraser");
+const tooltips = document.querySelectorAll(".tooltip");
 const colorInput = document.querySelector(".color-code");
 const setColorBtn = document.querySelector(".set-color");
 const rainbowBtn = document.querySelector(".rainbow");
@@ -146,3 +147,7 @@ clearBtn.addEventListener("click", clearGrids);
 eraseBtn.addEventListener("click", eraseGrid);
 setColorBtn.addEventListener("click", setColor);
 rainbowBtn.addEventListener("click", rainbowTime);
+
+tooltips.forEach((tooltip) => {
+  tooltip.addEventListener("mouseover", function () {});
+});

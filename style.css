@@ -139,7 +139,6 @@ body {
   background-color: #2a9d8f;
   font-family: "monocraft", cursive;
   min-height: 10vh;
-  overflow: hidden;
   color: #264653;
 }
 
@@ -152,7 +151,7 @@ nav {
 .main {
   display: flex;
   justify-content: center;
-  margin-left: -13rem;
+  margin-left: 53rem;
 }
 
 p {
@@ -169,8 +168,24 @@ p {
   background-color: white;
 }
 
-.more-info {
-  user-select: none;
+.tooltip {
+  border-bottom: dotted 1px #264653;
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  opacity: 0;
+  background-color: black;
+  width: 8rem;
+  height: 2rem;
+  position: absolute;
+  z-index: 100;
+  transform: translate(-1rem, -2rem);
+}
+
+.tooltip:hover .tooltiptext:hover {
+  opacity: 1;
 }
 
 .grid-slider {
