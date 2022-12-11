@@ -4,6 +4,7 @@ const container = document.querySelector(".grid-container");
 const clearBtn = document.querySelector(".clear-grids");
 const eraseBtn = document.querySelector(".eraser");
 const tooltips = document.querySelectorAll(".tooltip");
+const tooltiptexts = document.querySelectorAll(".tooltiptext");
 const colorInput = document.querySelector(".color-code");
 const setColorBtn = document.querySelector(".set-color");
 const rainbowBtn = document.querySelector(".rainbow");
@@ -93,11 +94,16 @@ const createGrids = function () {
 };
 
 createGrids();
+size.innerHTML = `${gridSlider.value} x ${gridSlider.value} [${
+  gridSlider.value * gridSlider.value
+} Grid(s)]`;
 
 const grids = document.querySelectorAll(".grid");
 
 gridSlider.oninput = function () {
-  size.innerHTML = `${this.value} x ${this.value}`;
+  size.innerHTML = `${this.value} x ${this.value} [${
+    this.value * this.value
+  } Grid(s)]`;
   gridSize = +this.value;
   createGrids();
 };
@@ -106,31 +112,34 @@ const rainbowTime = function () {
   if (!rainbowToggle) {
     rainbowToggle = true;
     eraserToggle = false;
-    eraseBtn.style.borderStyle = "hidden";
-    rainbowBtn.style.backgroundColor = "rgba(255, 255, 255, 0.893)";
-    rainbowBtn.style.borderStyle = "inset";
+    eraseBtn.style.backgroundColor = "white";
+    eraseBtn.style.color = "#264653";
+    rainbowBtn.style.background =
+      "linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3)";
+    rainbowBtn.style.color = "white";
   } else {
     rainbowToggle = false;
-    rainbowBtn.style.backgroundColor = "white";
-    rainbowBtn.style.borderStyle = "hidden";
+    rainbowBtn.style.background = "white";
+    rainbowBtn.style.color = "#264653";
   }
 };
 
 const clearGrids = function () {
   createGrids();
   eraserToggle = false;
-  eraseBtn.style.borderStyle = "hidden";
+  eraseBtn.style.backgroundColor = "white";
+  eraseBtn.style.color = "#264653";
 };
 
 const eraseGrid = function () {
   if (!eraserToggle) {
     eraserToggle = true;
-    eraseBtn.style.backgroundColor = "rgba(255, 255, 255, 0.893)";
-    eraseBtn.style.borderStyle = "inset";
+    eraseBtn.style.backgroundColor = "#264653";
+    eraseBtn.style.color = "white";
   } else {
     eraserToggle = false;
     eraseBtn.style.backgroundColor = "white";
-    eraseBtn.style.borderStyle = "hidden";
+    eraseBtn.style.color = "#264653";
   }
 };
 
@@ -139,8 +148,10 @@ const setColor = function () {
   document.documentElement.style.setProperty(`--selected`, `${color}`);
   eraserToggle = false;
   rainbowToggle = false;
-  eraseBtn.style.borderStyle = "hidden";
-  rainbowBtn.style.borderStyle = "hidden";
+  eraseBtn.style.backgroundColor = "white";
+  eraseBtn.style.color = "#264653";
+  rainbowBtn.style.background = "white";
+  rainbowBtn.style.color = "#264653";
 };
 
 clearBtn.addEventListener("click", clearGrids);
@@ -148,6 +159,12 @@ eraseBtn.addEventListener("click", eraseGrid);
 setColorBtn.addEventListener("click", setColor);
 rainbowBtn.addEventListener("click", rainbowTime);
 
-tooltips.forEach((tooltip) => {
-  tooltip.addEventListener("mouseover", function () {});
+tooltips.forEach((tooltip, i) => {
+  tooltip.addEventListener("mouseover", function () {
+    tooltiptexts[i].classList.add("visible");
+  });
+
+  tooltip.addEventListener("mouseleave", function () {
+    tooltiptexts[i].classList.remove("visible");
+  });
 });

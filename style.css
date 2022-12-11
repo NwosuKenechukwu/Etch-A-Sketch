@@ -145,13 +145,13 @@ body {
 nav {
   text-align: center;
   font-size: 7rem;
-  margin: 3rem 0 7rem 0;
+  margin: 1rem 0 4rem 0;
 }
 
 .main {
   display: flex;
   justify-content: center;
-  margin-left: 53rem;
+  margin-left: -13rem;
 }
 
 p {
@@ -168,24 +168,25 @@ p {
   background-color: white;
 }
 
-.tooltip {
-  border-bottom: dotted 1px #264653;
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
+.tooltiptext {
   opacity: 0;
-  background-color: black;
-  width: 8rem;
-  height: 2rem;
+  background-color: #264653;
+  color: white;
+  width: 14rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
   position: absolute;
+  text-align: center;
+  font-size: 0.8rem;
   z-index: 100;
-  transform: translate(-1rem, -2rem);
+  transform: translate(15.2rem, -6.3rem);
+  transition: opacity 1s;
 }
 
-.tooltip:hover .tooltiptext:hover {
+.visible {
   opacity: 1;
+  transition: opacity 0.5s;
 }
 
 .grid-slider {
@@ -228,8 +229,9 @@ button:hover {
   background-color: white;
   display: flex;
   flex-direction: row;
-  margin: 0 10rem 8.4rem 10rem;
+  margin: 0 10rem 2rem 10rem;
   user-select: none;
+  border: #264653 2rem solid;
 }
 
 .grid:hover {
@@ -249,5 +251,5 @@ footer {
   color: #264653;
   text-align: center;
   margin-top: auto;
-  font-size: 3rem;
+  font-size: 1rem;
 }
